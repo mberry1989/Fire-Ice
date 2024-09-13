@@ -2,10 +2,10 @@ import { camelCasePropertyNameResolver, createDeliveryClient, IContentItem, ICon
 
 const deliveryClient = createDeliveryClient({
     environmentId: process.env.KONTENT_ENVIRONMENT_ID ?? '',
-    previewApiKey: process.env.KONTENT_PREVIEW_KEY ?? '',
-    defaultQueryConfig: {
-        usePreviewMode: process.env.KONTENT_PREVIEW_KEY !== '' ? true : false
-    },
+    // previewApiKey: process.env.KONTENT_PREVIEW_KEY ?? '',
+    // defaultQueryConfig: {
+    //     usePreviewMode: process.env.KONTENT_PREVIEW_KEY !== '' ? true : false
+    // },
     propertyNameResolver: camelCasePropertyNameResolver
 });
 
