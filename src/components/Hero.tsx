@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { Container } from "@/components/Container";
-import { CTA } from "@/components/CTA";
+import { Container } from "../components/Container";
+import { CTA } from "../components/CTA";
 import { CallToAction, Event, Link } from "@/app/models";
-import { Logo } from "./Logo";
 
 type AppProps = {
   event: Event,

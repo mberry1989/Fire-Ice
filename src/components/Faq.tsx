@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Container } from "@/components/Container";
+import { Container } from "../components/Container";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
 import { FAQGroup } from "@/app/models";

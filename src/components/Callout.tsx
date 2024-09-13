@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "@/components/Container";
-import { CallToAction } from "@/app/models";
+import { Container } from "../components/Container";
+import { CallToAction } from "../app/models";
 
 interface AppProps {
   cta: CallToAction
