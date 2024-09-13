@@ -15,6 +15,7 @@ const config: Config = {
     extend: {
       colors: {
         trueGray: colors.neutral,
+        darkPurple: '#764d79'
       },
     },
     fontFamily: {

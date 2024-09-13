@@ -1,29 +1,19 @@
-import React from "react";
-import { Container } from "@/components/Container";
+import { CallToAction } from "@/app/models";
 
-export const Cta = () => {
-  return (
-    <Container>
-      <div className="flex flex-wrap items-center justify-between w-full max-w-4xl gap-5 mx-auto text-white bg-indigo-600 px-7 py-7 lg:px-12 lg:py-12 lg:flex-nowrap rounded-xl">
-        <div className="flex-grow text-center lg:text-left">
-          <h2 className="text-2xl font-medium lg:text-3xl">
-            Ready to try-out this template?
-          </h2>
-          <p className="mt-2 font-medium text-white text-opacity-90 lg:text-xl">
-            Don&apos;t let your visitors see a poor landing.
-          </p>
-        </div>
-        <div className="flex-shrink-0 w-full text-center lg:w-auto">
-          <a
-            href="https://github.com/web3templates"
-            target="_blank"
-            rel="noopener"
-            className="inline-block py-3 mx-auto text-lg font-medium text-center text-indigo-600 bg-white rounded-md px-7 lg:px-10 lg:py-5 "
-          >
-            Download for Free
-          </a>
-        </div>
-      </div>
-    </Container>
-  );
-};
+type AppProps = {
+    cta: CallToAction
+    }
+
+export const CTA = ({cta}:AppProps) => {
+    return (
+<div className="flex flex-col space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
+              <a
+                href={cta.elements.link.linkedItems[0].elements.externalUrl.value}
+                target="_blank"
+                rel="noopener"
+                className="px-2 py-4 text-lg font-medium text-center text-indigo-600 bg-white rounded-md ">
+                {cta.elements.title.value}
+              </a>
+            </div>
+        )
+        };
