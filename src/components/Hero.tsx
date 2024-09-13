@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Container } from "../components/Container";
-import { CTA } from "../components/CTA";
+import { CTA } from "../components/Cta";
 import { CallToAction, Event, Link } from "@/app/models";
 
 type AppProps = {
