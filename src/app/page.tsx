@@ -1,35 +1,31 @@
 import { Metadata } from "next";
-
 import { Container } from "@/components/Container";
 import { Hero } from "@/components/Hero";
 import { SectionTitle } from "@/components/SectionTitle";
-import { BenefitLevel } from "@/components/Benefits";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { Faq } from "@/components/Faq";
-import { Callout } from "@/components/Callout";
 import { getItemByCodename, getItemsContainingTerms, getItemsOfType } from "@/services/kontentClient";
 import { Benefits, CallToAction, Event, Testimonial, Link as KaiLink, Organization, FAQGroup } from "./models";
 import  { RichTextElement } from "@/components/RichTextElement";
 import { Sponsors } from "@/components/Sponsors";
-import Image from "next/image";
 import { Footer } from "@/components/Footer";
 
 export default async function Home() {
   const event = await getEventData()
   const ctas = await getCTAs()
-  const benefits = await getBenefits()
+  // const benefits = await getBenefits()
   const testimonials = await getTestimonials()
   const logo = await getLogo()
   const goldSponsors = await getGoldSponsors()
   const organizers = event.elements.organizer.linkedItems
 
-  const gold = benefits.filter(item => item.system.codename === 'gold_level')[0]
-  const silver = benefits.filter(item => item.system.codename === 'silver_level')[0]
-  const bronze = benefits.filter(item => item.system.codename === 'bronze_level')[0]
+  // const gold = benefits.filter(item => item.system.codename === 'gold_level')[0]
+  // const silver = benefits.filter(item => item.system.codename === 'silver_level')[0]
+  // const bronze = benefits.filter(item => item.system.codename === 'bronze_level')[0]
 
   const faqs = await getFAQs()
 
-  const becomeASponsor = ctas.filter(cta => cta.system.codename === 'become_a_sponsor')[0]
+  // const becomeASponsor = ctas.filter(cta => cta.system.codename === 'become_a_sponsor')[0]
 
   return (
     <div className="w-full bg-darkPurple">
@@ -48,7 +44,8 @@ export default async function Home() {
         <RichTextElement element={event.elements.description} isInsideTable={false}/>
       </Container>
 
-      <SectionTitle
+{/* SPONSORS START*/}
+      {/* <SectionTitle
         preTitle="Why sponsor us?"
         title="Sponsor Benefits"
       >
@@ -90,7 +87,8 @@ export default async function Home() {
     </Container>
     </Container>
 
-    <Callout cta={becomeASponsor}/>
+    <Callout cta={becomeASponsor}/> */}
+{/* SPONSORS END*/}
 
       <SectionTitle
         preTitle="Testimonials"
@@ -134,10 +132,10 @@ async function getCTAs() {
   return ctas
 }
 
-async function getBenefits() {
-  const benefits = await getItemsOfType<Benefits>('benefits', 5)
-  return benefits
-}
+// async function getBenefits() {
+//   const benefits = await getItemsOfType<Benefits>('benefits', 5)
+//   return benefits
+// }
 
 async function getTestimonials() {
   const testimonials = await getItemsOfType<Testimonial>('testimonial', 5)

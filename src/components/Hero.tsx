@@ -11,7 +11,7 @@ type AppProps = {
 
 export const Hero = ({event, ctas, logo}:AppProps) => {
   const buyCTA = ctas.filter(item  => item.system.codename == 'get_your_tickets')[0]
-  const sponsorCTA = ctas.filter(item  => item.system.codename == 'become_a_sponsor')[0]
+  //const sponsorCTA = ctas.filter(item  => item.system.codename == 'become_a_sponsor')[0]
   const eventImage = event.elements.image.value[0]
   return (
     <>
@@ -39,7 +39,7 @@ export const Hero = ({event, ctas, logo}:AppProps) => {
             
             <div className="flex items-center justify-center gap-4 ">
               <CTA cta={buyCTA}/>
-              <CTA cta={sponsorCTA}/>
+              {/* <CTA cta={sponsorCTA}/> */}
             </div>
             </div>
           </div>
